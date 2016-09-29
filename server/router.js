@@ -1,0 +1,13 @@
+const express = require('express');
+const _ourController = require('./controllers/controller');
+
+module.exports = function(app) {
+	const apiRoutes = express.Router();
+
+	//routes will go here
+	apiRoutes.get('/helloworld', _ourController.helloworld);
+
+	app.use('/api', apiRoutes);
+
+	
+}
