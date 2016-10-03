@@ -10,8 +10,7 @@ import Login from './components/login';
 export default (  
   <Route path='/' component={App}>
     <IndexRoute component={DashBoard} />
-    <Route path='dashboard' component={DashBoard} />
-    <Route path='login' component={Login} />
-    <Route path='*' component={NotFound} />
+    <Route path='/dashboard' component={DashBoard} />
+    <Route path='/login' component={Login} />
   </Route>
 );

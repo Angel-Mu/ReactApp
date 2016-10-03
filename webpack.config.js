@@ -1,10 +1,11 @@
 var webpack = require('webpack');
+var path = require('path');
 
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
 	context: __dirname,
-	entry: "./src/index.js",
+	entry: "./client/src/index.js",
 	module: {
 		loaders: [{
 			test: /\.js|.jsx?$/,
@@ -20,10 +21,10 @@ module.exports = {
 		}]
 	},
 	output: {
-		path: __dirname,
-		filename: "bundle.js",
-	},
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'bundle.js'
+  },
 	plugins: [
-		new ExtractTextPlugin('src/assets/stylesheets/app.css', { allChunks: true })
+		new ExtractTextPlugin('../client/src/assets/stylesheets/app.css', { allChunks: true })
 	]
 };

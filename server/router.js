@@ -1,6 +1,8 @@
 const express = require('express');
 const _ourController = require('./controllers/controller');
 
+var path = require("path");
+
 module.exports = function(app) {
 	const apiRoutes = express.Router();
 
@@ -9,5 +11,8 @@ module.exports = function(app) {
 
 	app.use('/api', apiRoutes);
 
-	
+	// app.get('*', (req, res) => {
+	//   res.sendFile(path.resolve(__dirname, '../client/index.html'));
+	// });
+
 }
